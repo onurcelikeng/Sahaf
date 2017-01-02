@@ -1,0 +1,16 @@
+App.xbf
+MainPage.xbf
+Styles\AppBarButtonStyle.xbf
+Styles\AutoSuggestBoxStyle.xbf
+Styles\ComboBoxStyle.xbf
+Styles\TextBoxStyle.xbf
+Styles\TextBoxStyle_Dark.xbf
+Views\AddAdvertView.xbf
+Views\AdvertDetailsView.xbf
+Views\AdvertView.xbf
+Views\ContentDialogs\AdvertSettingsDialog.xbf
+Views\ContentDialogs\ReportDialog.xbf
+Views\LoginView.xbf
+Views\MessageView.xbf
+Views\PersonView.xbf
+Views\ProfileView.xbf

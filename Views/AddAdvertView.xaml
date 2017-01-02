@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="Sahaf.Views.AddAdvertView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sahaf.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/TextBoxStyle_Dark.xaml"/>
+                <ResourceDictionary Source="/Styles/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/AppBarButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.Background>
+                <SolidColorBrush Color="#fc9024"/>
+            </Grid.Background>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+
+                <TextBlock Text="Yeni İlan" Foreground="#ffffff" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+
+                <AppBarButton x:Name="deleteButton" Icon="Delete" Foreground="#ffffff" HorizontalAlignment="Right" VerticalAlignment="Center" Click="deleteButton_Click" Style="{StaticResource AppBarButtonStyle}"/>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <Grid.Background>
+                <SolidColorBrush Color="#ffffff"/>
+            </Grid.Background>
+
+            <ScrollViewer VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" HorizontalScrollMode="Disabled" IsHoldingEnabled="True">
+
+                <StackPanel>
+
+                    <Image x:Name="book" Height="170" Stretch="Uniform"/>
+
+                    <Grid Background="#FBFBFB" VerticalAlignment="Stretch">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/AdvertIcons/description.png" Height="25" Stretch="UniformToFill" Margin="30,10,0,10"/>
+
+                        <TextBlock Grid.Column="1" Text="İlan Adı" Opacity="0.7" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+                        <TextBox x:Name="advertName" Grid.Column="2" PlaceholderText="Örn. Yalnızlık" TextAlignment="Right" VerticalAlignment="Center" Style="{StaticResource TextBoxStyle}" Margin="0,0,20,0"/>
+
+                    </Grid>
+
+                    <Grid Background="#FFFFFF" VerticalAlignment="Stretch">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/AdvertIcons/money.png" Height="25" Stretch="UniformToFill" Margin="30,10,0,10"/>
+
+                        <TextBlock Grid.Column="1" Text="Fiyat" Opacity="0.7" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+                        <TextBox x:Name="price" Grid.Column="2" InputScope="NumericPassword" PlaceholderText="Örn. 30 TL" TextAlignment="Right" VerticalAlignment="Center" Style="{StaticResource TextBoxStyle}" Margin="0,0,20,0"/>
+
+                    </Grid>
+
+                    <Grid Background="#FBFBFB" VerticalAlignment="Stretch">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/AdvertIcons/city.png" Height="25" Stretch="UniformToFill" Margin="30,10,0,10"/>
+
+                        <TextBlock Grid.Column="1" Text="Şehir" Opacity="0.7" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+                        <TextBlock x:Name="city" Grid.Column="2" Text="Konum bul" FontSize="16" Opacity="0.7" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,30,0"/>
+
+                    </Grid>
+
+                    <Grid Background="#FFFFFF" VerticalAlignment="Stretch">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/AdvertIcons/category.png" Height="25" Stretch="UniformToFill" Margin="30,10,0,10"/>
+
+                        <TextBlock Grid.Column="1" Text="Kategori" Opacity="0.7" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+                        <ComboBox Grid.Column="2" PlaceholderText="Kategori Seçiniz" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ComboBoxStyle}" Margin="0,0,20,0"/>
+
+                    </Grid>
+
+                    <Grid Margin="0,20,0,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+
+                            <Grid x:Name="advertButton" Margin="0,5,0,10" Tapped="advertButton_Tapped">
+
+                                <Rectangle Fill="#fc9024" RadiusX="10" RadiusY="10" Height="40" HorizontalAlignment="Stretch"/>
+
+                                <TextBlock Text="Yayımla" FontSize="15" FontWeight="Normal" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Grid>
+
+    </Grid>
+
+</Page>

@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Sahaf.Views.NotificationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sahaf.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Background>
+        <SolidColorBrush Color="#fc9024"/>
+    </Page.Background>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.Background>
+                <SolidColorBrush Color="#fc9024"/>
+            </Grid.Background>
+
+            <TextBlock Text="Bildirimler" Foreground="#ffffff" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <Grid.Background>
+                <SolidColorBrush Color="#ffffff"/>
+            </Grid.Background>
+
+        </Grid>
+
+    </Grid>
+
+</Page>
+

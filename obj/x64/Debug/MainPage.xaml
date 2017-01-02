@@ -1,0 +1,97 @@
+﻿<Page
+    x:Class="Sahaf.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sahaf"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Background>
+        <SolidColorBrush Color="#fc9024"/>
+    </Page.Background>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/AppBarButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid.Background>
+            <SolidColorBrush Color="#fc9024"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Frame x:ConnectionId='5' x:Name="iframe"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <Grid.Background>
+                <SolidColorBrush Color="#F1F1F1"/>
+            </Grid.Background>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <AppBarButton x:ConnectionId='4' x:Name="shoppingButton" HorizontalAlignment="Center" VerticalAlignment="Center"                              Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <BitmapIcon Margin="-2" UriSource="Assets/Icons/shop.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <AppBarButton x:ConnectionId='3' x:Name="cameraButton" HorizontalAlignment="Center" VerticalAlignment="Center"                            Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <BitmapIcon Margin="-2" UriSource="Assets/Icons/camera.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+
+                <AppBarButton x:ConnectionId='2' x:Name="notificationButton" HorizontalAlignment="Center" VerticalAlignment="Center"                                  Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <BitmapIcon Margin="-2" UriSource="Assets/Icons/notification.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+
+            </Grid>
+
+            <Grid Grid.Column="3">
+
+                <AppBarButton x:ConnectionId='1' x:Name="profileButton" HorizontalAlignment="Center" VerticalAlignment="Center"                             Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <BitmapIcon Margin="-2" UriSource="Assets/Icons/person.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Page>
+

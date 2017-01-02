@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Sahaf.Views.StartScreenView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sahaf.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/Sample/bg1.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid Background="#9C212121"/>
+
+        <Grid>
+
+            <Grid.Background>
+                <SolidColorBrush Color="Transparent"/>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+
+                <ProgressBar x:ConnectionId='2' x:Name="progress" Background="Transparent" Foreground="#fc9024" VerticalAlignment="Center" />
+
+                <Image Source="ms-appx:///Assets/Logo/StartLogo.png" Opacity="0.7" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+
+            <Grid Grid.Row="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+
+                    <Grid x:ConnectionId='1' x:Name="facebookButton" MaxWidth="400" Margin="0,5,0,5"                               >
+
+                        <Rectangle Fill="#3a4875" Opacity="0.5" RadiusX="10" RadiusY="10" Height="40" HorizontalAlignment="Stretch"/>
+
+                        <TextBlock Text="Facebook ile giriş yap" FontSize="15" FontWeight="Normal" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Grid>
+
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Page>
+
